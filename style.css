@@ -1,0 +1,230 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman';
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: rgb(233, 175, 87);
+}
+
+.container .hero{
+    position: relative;
+    z-index: 10;
+    height: 85vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgb(208, 127, 5);
+    border-radius: 20px;
+    padding: 0 40px 0 80px ;
+    box-shadow: -15px 17px rgb(10, 10, 10, 0.1);
+    backdrop-filter: blur(40px);
+}
+
+.hero nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+
+.hero nav .logo{
+    color: rgb(242, 249, 249);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.hero nav .nav-links a{
+    color: black;
+    margin-left: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active{
+    color: blue;
+}
+
+.hero .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .content .div-text{
+    width: 40%;
+}
+
+.hero .content .div-text h1{
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: beige;
+}
+
+.hero .content .div-text h4{
+    color: rgb(76, 44, 4);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.hero .content .div-text p{
+    color: rgb(80, 55, 5);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.hero .content .div-text .btn{
+    padding: 10px 15px;
+    background-color: blue;
+    border: 2px solid ;
+    color: rgb(245, 241, 249);
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.hero .content .div-text .btn:hover{
+    color: rgb(249, 246, 241);
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.hero .content .div-img{
+    width: 50%;
+}
+
+.hero .content .div-img img{
+    width: 100%;
+}
+
+.social-links{
+    position: absolute; 
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links a i{
+    font-size: 25px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: rgb(236, 57, 8);
+    transition: 0.4s;
+}
+
+.social-links a i:hover{
+    color: blue;
+}
+
+/* Animation */
+.hero .logo,
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text .btn{
+    position: relative;
+    top: 50px;
+    animation: slide-top .5s linear forwards;
+    opacity: 0;
+}
+
+.hero .logo{
+    animation-delay: 0.2s;
+}
+
+.hero .content .div-text h1{
+    animation-delay: 0.5s;
+}
+
+.hero .content .div-text h4{
+    animation-delay: 0.9s;
+}
+
+.hero .content .div-text .btn{
+    animation-delay: 1.8s;
+}
+
+@keyframes slide-top {
+    0%{
+        top: 50px;
+        opacity: 0;
+    }
+
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-text p{
+    position: relative;
+    left: 100px;
+    animation: slide-right .5s linear forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+
+@keyframes slide-right{
+    0%{
+        left: 100px;
+        opacity: 0;
+    }
+
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+    
+}
+
+.hero .content .div-img{
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fade-img .5s linear forwards;
+    animation-delay: 2.1s;
+}
+
+@keyframes fade-img {
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
